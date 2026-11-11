@@ -1,0 +1,2677 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #34291f;
+  background: #fffaf3;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  font-weight: 400;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  background: #fffaf3;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button, input {
+  font: inherit;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  height: 82px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fffaf3;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #f2e9dc;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.brand-icon {
+  width: 43px;
+  height: 43px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: #ed873b;
+}
+
+.brand-orange,
+.footer-brand span,
+.auth-brand span {
+  color: #e98238;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.nav-links > a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #63584c;
+  transition: color .2s;
+}
+
+.nav-links > a:hover {
+  color: #e98238;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+
+.login-link {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.signup-btn {
+  background: #ed873b;
+  color: white;
+  padding: 13px 23px;
+  border-radius: 9px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: .2s;
+  border: none;
+  cursor: pointer;
+}
+
+.signup-btn:hover,
+.primary-btn:hover {
+  background: #d96c27;
+  transform: translateY(-2px);
+}
+
+.mobile-menu {
+  display: none;
+  border: none;
+  background: none;
+  color: #34291f;
+  cursor: pointer;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+  padding: 75px 9% 85px;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: 60px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 85% 30%, #ffedda 0, transparent 35%),
+    #fffaf3;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff0df;
+  color: #d97932;
+  padding: 10px 15px;
+  border-radius: 30px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-weight: 800;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(43px, 5vw, 68px);
+  line-height: 1.13;
+  margin: 26px 0 20px;
+  letter-spacing: -2px;
+}
+
+.hero h1 span {
+  color: #e98238;
+}
+
+.hero-description {
+  max-width: 520px;
+  color: #796f64;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.primary-btn {
+  background: #ed873b;
+  color: white;
+  border: none;
+  padding: 15px 22px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.secondary-btn {
+  color: #54483d;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 35px;
+}
+
+.avatar-stack {
+  display: flex;
+}
+
+.avatar-stack span {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff0df;
+  border: 2px solid white;
+  display: grid;
+  place-items: center;
+  margin-right: -9px;
+}
+
+.hero-trust p {
+  font-size: 12px;
+  color: #81766a;
+  margin-left: 7px;
+}
+
+.hero-trust strong {
+  color: #4b3b2c;
+}
+
+.hero-image-area {
+  position: relative;
+  padding: 20px;
+}
+
+.hero-image {
+  height: 455px;
+  border-radius: 48% 48% 25px 25px;
+  overflow: hidden;
+  box-shadow: 0 20px 55px #9a653526;
+  transform: rotate(2deg);
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.floating-card {
+  position: absolute;
+  background: white;
+  padding: 14px 18px;
+  border-radius: 14px;
+  box-shadow: 0 10px 35px #60472b20;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.floating-top {
+  top: 45px;
+  left: -35px;
+}
+
+.floating-bottom {
+  bottom: 45px;
+  right: -20px;
+}
+
+.floating-icon {
+  font-size: 25px;
+}
+
+.floating-card strong,
+.floating-card small {
+  display: block;
+}
+
+.floating-card strong {
+  font-size: 13px;
+}
+
+.floating-card small {
+  font-size: 10px;
+  color: #887d70;
+  margin-top: 4px;
+}
+
+.hero-decoration {
+  position: absolute;
+  right: -10px;
+  top: -20px;
+  color: #f1a25c;
+  font-size: 65px;
+}
+
+/* =========================
+   COMMON SECTION STYLES
+========================= */
+
+.features-section,
+.categories-section {
+  padding: 85px 9%;
+}
+
+.features-section {
+  background: white;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 48px;
+}
+
+.section-label {
+  color: #e98238;
+  font-size: 11px;
+  letter-spacing: 1.8px;
+  font-weight: 800;
+}
+
+.section-heading h2,
+.ai-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 3.5vw, 42px);
+  margin: 13px 0;
+}
+
+.section-heading p {
+  color: #81766a;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 23px;
+}
+
+.feature-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  padding: 29px;
+  border: 1px solid #f1e9df;
+  border-radius: 15px;
+  transition: .25s;
+  background: #fffdfa;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px #6d4a2512;
+  border-color: #f1c69f;
+}
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  background: #fff0df;
+  color: #e98238;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  font-size: 17px;
+  margin-bottom: 11px;
+}
+
+.feature-card p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #82766a;
+}
+
+/* =========================
+   FOOD CATEGORIES
+========================= */
+
+.categories-section {
+  background: #fff8ef;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.category-card {
+  position: relative;
+  height: 240px;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s;
+}
+
+.category-card:hover img {
+  transform: scale(1.08);
+}
+
+.category-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 22px 17px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(transparent, #21150bc9);
+}
+
+.category-overlay h3 {
+  font-size: 17px;
+}
+
+/* =========================
+   AI FOODIE SECTION
+========================= */
+
+.ai-section {
+  padding: 85px 12%;
+  background: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.ai-content h2 {
+  margin-top: 15px;
+}
+
+.ai-content p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #81766a;
+  margin: 15px 0 28px;
+}
+
+.ai-visual {
+  min-height: 310px;
+  border-radius: 25px;
+  background: #fff0df;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+}
+
+.ai-circle {
+  height: 145px;
+  width: 145px;
+  border-radius: 50%;
+  background: white;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 12px 35px #a15e2520;
+}
+
+.ai-circle span {
+  font-size: 70px;
+}
+
+.ai-message {
+  background: white;
+  padding: 14px 19px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  box-shadow: 0 5px 20px #a15e2510;
+}
+
+/* =========================
+   CALL TO ACTION
+========================= */
+
+.cta-section {
+  padding: 65px 20px;
+  text-align: center;
+  background: #e98238;
+  color: white;
+}
+
+.cta-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  margin: 13px 0;
+}
+
+.cta-section p {
+  font-size: 14px;
+  opacity: .9;
+  margin-bottom: 24px;
+}
+
+.cta-btn {
+  background: white;
+  color: #d97530;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border-radius: 9px;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  padding: 35px 20px;
+  text-align: center;
+  background: #33271e;
+  color: #f8ede0;
+}
+
+.footer-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  font-size: 21px;
+}
+
+.footer p {
+  color: #d1c1ae;
+  margin: 13px 0;
+  font-size: 13px;
+}
+
+.footer small {
+  font-size: 11px;
+  color: #a99a8c;
+}
+
+/* =========================
+   LOGIN AND REGISTER PAGES
+========================= */
+
+.auth-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #fffaf3;
+}
+
+.auth-image {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.auth-image img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+}
+
+.auth-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, #20140dbd, transparent 80%);
+}
+
+.auth-image-text {
+  position: absolute;
+  z-index: 2;
+  bottom: 70px;
+  left: 10%;
+  right: 10%;
+  color: white;
+}
+
+.auth-image-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 43px;
+  max-width: 470px;
+}
+
+.auth-image-text p {
+  margin-top: 15px;
+  font-size: 15px;
+  color: #f8e7d5;
+}
+
+.auth-form-area {
+  padding: 45px 12%;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.auth-form {
+  width: 100%;
+  max-width: 420px;
+  margin: auto;
+  padding: 35px 0;
+}
+
+.auth-form h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  margin: 12px 0;
+}
+
+.auth-form > p {
+  font-size: 13px;
+  color: #81766a;
+  margin-bottom: 28px;
+}
+
+.auth-form form label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  margin: 18px 0 8px;
+}
+
+.input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #e9dfd3;
+  border-radius: 9px;
+  padding: 0 14px;
+  height: 49px;
+  color: #b18a69;
+  background: white;
+}
+
+.input-wrap:focus-within {
+  border-color: #e98238;
+  box-shadow: 0 0 0 3px #e9823818;
+}
+
+.input-wrap input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 13px;
+  color: #34291f;
+}
+
+.auth-submit {
+  width: 100%;
+  margin-top: 26px;
+}
+
+.auth-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.auth-form .auth-switch {
+  text-align: center;
+  margin: 24px 0;
+}
+
+.auth-switch a {
+  color: #e98238;
+  font-weight: 800;
+}
+
+.back-home {
+  display: block;
+  text-align: center;
+  font-size: 13px;
+  color: #81766a;
+}
+
+.back-home:hover {
+  color: #e98238;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0 5%;
+  }
+
+  .nav-links {
+    gap: 17px;
+  }
+
+  .hero {
+    padding: 60px 6%;
+    gap: 30px;
+  }
+
+  .hero-image {
+    height: 370px;
+  }
+
+  .features-section,
+  .categories-section {
+    padding: 65px 6%;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ai-section {
+    padding: 65px 7%;
+  }
+}
+
+/* =========================
+   MOBILE DESIGN
+========================= */
+
+@media (max-width: 650px) {
+  .navbar {
+    height: 72px;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 24px;
+    flex-direction: column;
+    align-items: stretch;
+    box-shadow: 0 10px 20px #00000012;
+  }
+
+  .nav-links.show-menu {
+    display: flex;
+  }
+
+  .nav-actions {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 18px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 50px 6%;
+  }
+
+  .hero h1 {
+    font-size: 46px;
+  }
+
+  .hero-image-area {
+    margin: 10px 10px 25px;
+  }
+
+  .hero-image {
+    height: 330px;
+  }
+
+  .floating-top {
+    left: -15px;
+  }
+
+  .floating-bottom {
+    right: -15px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .category-card {
+    height: 175px;
+  }
+
+  .ai-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .cta-section h2 {
+    font-size: 27px;
+  }
+
+  .auth-page {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-image {
+    display: none;
+  }
+
+  .auth-form-area {
+    min-height: 100vh;
+    padding: 30px 7%;
+  }
+
+  .auth-form h2 {
+    font-size: 29px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE SCREENS
+========================= */
+
+@media (max-width: 380px) {
+  .hero h1 {
+    font-size: 39px;
+  }
+
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Authentication Loading */
+
+.auth-loading {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  background: #fffaf3;
+  color: #6d5b4b;
+  font-size: 14px;
+}
+
+.loading-spinner {
+  width: 42px;
+  height: 42px;
+  border: 4px solid #f8dfc8;
+  border-top-color: #ed873b;
+  border-radius: 50%;
+  animation: foodieSpin 0.8s linear infinite;
+}
+
+@keyframes foodieSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Authentication Loading */
+
+.auth-loading {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  background: #fffaf3;
+  color: #6d5b4b;
+  font-size: 14px;
+}
+
+.loading-spinner {
+  width: 42px;
+  height: 42px;
+  border: 4px solid #f8dfc8;
+  border-top-color: #ed873b;
+  border-radius: 50%;
+  animation: foodieSpin 0.8s linear infinite;
+}
+
+@keyframes foodieSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   FRIEND MANAGEMENT
+========================= */
+
+.friends-page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 55px 6%;
+  min-height: 85vh;
+}
+
+.friends-heading {
+  margin-bottom: 35px;
+}
+
+.friends-heading h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  margin: 13px 0;
+}
+
+.friends-heading p {
+  color: #81766a;
+  font-size: 14px;
+}
+
+.friend-search-card {
+  background: white;
+  border: 1px solid #f0e5d9;
+  border-radius: 16px;
+  padding: 27px;
+  margin-bottom: 32px;
+}
+
+.friend-search-card h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+}
+
+.friend-search-card h2 svg {
+  color: #ed873b;
+}
+
+.friend-search-card > p {
+  color: #81766a;
+  font-size: 13px;
+  margin: 10px 0 20px;
+}
+
+.friend-search-form {
+  display: flex;
+  gap: 12px;
+}
+
+.friend-search-form input {
+  flex: 1;
+  min-width: 0;
+  height: 49px;
+  border: 1px solid #e9dfd3;
+  border-radius: 9px;
+  padding: 0 15px;
+  outline: none;
+}
+
+.friend-search-form input:focus {
+  border-color: #ed873b;
+}
+
+.friend-search-form button,
+.add-friend-btn {
+  border: none;
+  background: #ed873b;
+  color: white;
+  border-radius: 9px;
+  padding: 0 23px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.friend-search-form button:disabled,
+.add-friend-btn:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+.friend-message {
+  color: #a75d2d;
+  margin-top: 15px;
+  font-size: 13px;
+}
+
+.search-user-result,
+.friend-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #fffdfa;
+  border: 1px solid #f0e5d9;
+  padding: 17px;
+  border-radius: 12px;
+  margin-top: 18px;
+}
+
+.friend-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: #fff0df;
+  color: #dc7a32;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.friend-details {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.friend-details strong {
+  font-size: 14px;
+}
+
+.friend-details span {
+  color: #897c70;
+  font-size: 12px;
+}
+
+.add-friend-btn {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.friend-tabs {
+  display: flex;
+  gap: 12px;
+  border-bottom: 1px solid #eee2d5;
+  margin-bottom: 24px;
+}
+
+.friend-tabs button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 14px 16px;
+  color: #81766a;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.friend-tabs button.active {
+  color: #e98238;
+  border-bottom-color: #e98238;
+}
+
+.friends-grid,
+.requests-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.friends-grid .friend-card,
+.requests-list .friend-card {
+  margin: 0;
+  background: white;
+}
+
+.friend-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #398453;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.accept-btn,
+.reject-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.accept-btn {
+  background: #e6f5e9;
+  color: #28864c;
+}
+
+.reject-btn {
+  background: #fff0ed;
+  color: #d64c3f;
+}
+
+.friends-empty {
+  grid-column: 1 / -1;
+  background: white;
+  border: 1px dashed #e8d6c4;
+  border-radius: 14px;
+  padding: 50px 20px;
+  text-align: center;
+  color: #897c70;
+}
+
+.friends-empty svg {
+  color: #ed873b;
+  margin-bottom: 13px;
+}
+
+.friends-empty h3 {
+  color: #34291f;
+  margin-bottom: 8px;
+}
+
+.friends-empty p {
+  font-size: 13px;
+}
+
+@media (max-width: 650px) {
+  .friends-page {
+    padding: 35px 5%;
+  }
+
+  .friends-heading h1 {
+    font-size: 29px;
+  }
+
+  .friend-search-form {
+    flex-direction: column;
+  }
+
+  .friend-search-form button {
+    height: 45px;
+  }
+
+  .friends-grid,
+  .requests-list {
+    grid-template-columns: 1fr;
+  }
+
+  .search-user-result,
+  .friend-card {
+    flex-wrap: wrap;
+  }
+
+  .add-friend-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* =================================
+   FOODIEBOT AI CHATBOT
+================================= */
+
+.chatbot-page {
+  min-height: 100vh;
+  background: #fffaf3;
+  color: #292019;
+  font-family: "DM Sans", sans-serif;
+}
+
+.chatbot-header {
+  min-height: 82px;
+  padding: 15px 6%;
+  background: #ffffff;
+  border-bottom: 1px solid #f0e5d8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.chatbot-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border: 1px solid #f0dfcf;
+  background: #fffaf3;
+  color: #513c2d;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.chatbot-back:hover {
+  background: #fff0df;
+}
+
+.chatbot-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.chatbot-brand-icon {
+  width: 46px;
+  height: 46px;
+  background: #fff0df;
+  color: #ec792f;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+}
+
+.chatbot-brand h2 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 23px;
+  color: #31251d;
+}
+
+.chatbot-brand span {
+  display: block;
+  color: #908174;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.chatbot-online {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #67584b;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.online-dot {
+  width: 9px;
+  height: 9px;
+  background: #39a96b;
+  border-radius: 50%;
+}
+
+.chatbot-main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 38px 22px 45px;
+}
+
+.chatbot-welcome {
+  text-align: center;
+  margin: 15px auto 30px;
+  max-width: 650px;
+}
+
+.chatbot-welcome-icon {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 15px;
+  background: #fff0df;
+  color: #e98238;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+}
+
+.chatbot-welcome h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 36px;
+  margin: 0 0 10px;
+  color: #38261b;
+}
+
+.chatbot-welcome p {
+  color: #857668;
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.chatbot-conversation {
+  background: #ffffff;
+  border: 1px solid #f0e4d8;
+  border-radius: 20px;
+  padding: 26px;
+  box-shadow: 0 8px 30px rgba(91, 57, 29, 0.045);
+}
+
+.chatbot-messages {
+  min-height: 240px;
+  max-height: 460px;
+  overflow-y: auto;
+  padding: 10px 5px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.chat-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 85%;
+}
+
+.bot-message {
+  align-self: flex-start;
+}
+
+.user-message {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.chat-message-avatar {
+  min-width: 38px;
+  height: 38px;
+  background: #fff0df;
+  color: #e98238;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+}
+
+.chat-message-content {
+  background: #fff9f2;
+  border: 1px solid #f2e7dc;
+  padding: 13px 17px;
+  border-radius: 5px 15px 15px 15px;
+}
+
+.user-message .chat-message-content {
+  background: #ec833e;
+  color: #ffffff;
+  border: none;
+  border-radius: 15px 5px 15px 15px;
+}
+
+.chat-sender {
+  display: block;
+  color: #e27b34;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.user-message .chat-sender {
+  color: #fff3e8;
+}
+
+.chat-message-content p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.chatbot-suggestions {
+  border-top: 1px solid #f1e8df;
+  padding: 20px 5px;
+}
+
+.chatbot-suggestions h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  margin: 0 0 14px;
+  color: #4c3829;
+}
+
+.chatbot-suggestions h3 svg {
+  color: #e98238;
+}
+
+.suggestion-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.suggestion-list button {
+  background: #fffaf4;
+  border: 1px solid #efddca;
+  color: #77543c;
+  padding: 10px 15px;
+  border-radius: 22px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.suggestion-list button:hover {
+  background: #fff0df;
+  border-color: #e98238;
+  color: #c56525;
+}
+
+.chatbot-input-area {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #eddfd1;
+  background: #fffaf5;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+.chatbot-input-area input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #392b20;
+  font-size: 14px;
+  padding: 8px;
+}
+
+.chatbot-input-area input::placeholder {
+  color: #a79585;
+}
+
+.chatbot-input-area button {
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 12px;
+  background: #e98238;
+  color: white;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.chatbot-input-area button:hover {
+  background: #cf6828;
+}
+
+.chatbot-input-area button:disabled {
+  background: #d8c9bb;
+  cursor: not-allowed;
+}
+
+.chatbot-disclaimer {
+  text-align: center;
+  color: #a39485;
+  font-size: 11px;
+  margin: 17px 0 0;
+}
+
+/* Responsive design */
+
+@media (max-width: 600px) {
+  .chatbot-header {
+    padding: 12px 15px;
+    gap: 10px;
+  }
+
+  .chatbot-brand h2 {
+    font-size: 18px;
+  }
+
+  .chatbot-brand-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .chatbot-back {
+    padding: 9px;
+    font-size: 12px;
+  }
+
+  .chatbot-online {
+    font-size: 11px;
+  }
+
+  .chatbot-main {
+    padding: 25px 12px;
+  }
+
+  .chatbot-welcome h1 {
+    font-size: 28px;
+  }
+
+  .chatbot-conversation {
+    padding: 15px;
+    border-radius: 15px;
+  }
+
+  .chatbot-message {
+    max-width: 95%;
+  }
+
+  .chat-message {
+    max-width: 95%;
+  }
+
+  .suggestion-list {
+    flex-direction: column;
+  }
+
+  .suggestion-list button {
+    text-align: left;
+  }
+}
+
+/* =====================================
+   FOODIEBOT RESTAURANTS PAGE
+===================================== */
+
+.restaurants-page {
+  min-height: 100vh;
+  background: #fffaf3;
+  color: #30251e;
+  font-family: "DM Sans", sans-serif;
+}
+
+.restaurants-header {
+  min-height: 82px;
+  padding: 15px 6%;
+  background: #ffffff;
+  border-bottom: 1px solid #f0e5d8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.restaurant-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border: 1px solid #f0dfcf;
+  background: #fffaf3;
+  color: #513c2d;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.restaurant-back-btn:hover {
+  background: #fff0df;
+}
+
+.restaurant-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.restaurant-brand-icon {
+  width: 46px;
+  height: 46px;
+  background: #fff0df;
+  color: #ec792f;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+}
+
+.restaurant-brand h2 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 23px;
+  color: #31251d;
+}
+
+.restaurant-brand span {
+  display: block;
+  color: #908174;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.restaurant-header-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #e98238;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.restaurants-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 45px 25px;
+}
+
+.restaurants-intro {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 42px;
+}
+
+.restaurant-section-label {
+  color: #e98238;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.restaurants-intro h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  color: #37261b;
+  margin: 14px 0;
+}
+
+.restaurants-intro > p {
+  color: #857668;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.find-restaurants-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+  padding: 14px 25px;
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  background: #e98238;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.find-restaurants-btn:hover {
+  background: #ce6828;
+  transform: translateY(-2px);
+}
+
+.find-restaurants-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.location-note {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  color: #998878;
+  font-size: 12px !important;
+  margin-top: 13px;
+}
+
+.restaurant-error {
+  max-width: 600px;
+  margin: 18px auto;
+  padding: 13px 17px;
+  border-radius: 10px;
+  background: #fff0eb;
+  border: 1px solid #f0c9b9;
+  color: #a44730;
+  font-size: 13px;
+}
+
+.restaurant-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 19px;
+}
+
+.restaurant-section-heading h2 {
+  margin: 0 0 6px;
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  color: #38291f;
+}
+
+.restaurant-section-heading p {
+  margin: 0;
+  color: #938274;
+  font-size: 13px;
+}
+
+.restaurant-count {
+  background: #fff0df;
+  color: #c56a2d;
+  padding: 8px 13px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.restaurant-map-section {
+  margin-bottom: 48px;
+}
+
+.restaurant-map {
+  height: 390px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid #eadfd4;
+  box-shadow: 0 8px 25px rgba(91, 57, 29, 0.06);
+}
+
+.restaurant-map-placeholder {
+  height: 300px;
+  border: 1px dashed #e7cbb2;
+  border-radius: 18px;
+  background: #fff5e9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.map-placeholder-icon {
+  width: 65px;
+  height: 65px;
+  display: grid;
+  place-items: center;
+  background: #fff0df;
+  color: #e98238;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.restaurant-map-placeholder h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 21px;
+  margin: 0 0 8px;
+}
+
+.restaurant-map-placeholder p {
+  color: #8e7d6e;
+  font-size: 13px;
+}
+
+.foodie-map-marker {
+  width: 34px;
+  height: 34px;
+  background: #e98238;
+  color: #ffffff;
+  border: 3px solid #ffffff;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.25);
+}
+
+.foodie-map-marker span {
+  transform: rotate(45deg);
+  font-size: 15px;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 11px;
+}
+
+.leaflet-popup-content {
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.leaflet-popup-content a {
+  color: #d96f2e;
+  font-weight: 700;
+}
+
+.restaurant-list-section {
+  margin-top: 35px;
+}
+
+.restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.restaurant-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 21px;
+  background: #ffffff;
+  border: 1px solid #f0e4d8;
+  border-radius: 16px;
+  transition: 0.2s ease;
+}
+
+.restaurant-card:hover {
+  border-color: #e9b48b;
+  box-shadow: 0 7px 20px rgba(91, 57, 29, 0.06);
+  transform: translateY(-2px);
+}
+
+.restaurant-card-icon {
+  min-width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  color: #e98238;
+  background: #fff0df;
+}
+
+.restaurant-card-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.restaurant-card-details h3 {
+  font-size: 16px;
+  margin: 0 0 7px;
+  color: #39291e;
+}
+
+.restaurant-cuisine {
+  display: inline-block;
+  color: #bf692f;
+  background: #fff5e9;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+
+.restaurant-card-details p {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  color: #8c7b6c;
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 7px 0;
+  overflow-wrap: anywhere;
+}
+
+.restaurant-card-details p svg {
+  min-width: 14px;
+  margin-top: 2px;
+  color: #df813d;
+}
+
+.restaurant-distance {
+  display: inline-block;
+  color: #39815b;
+  background: #eef8f0;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.restaurant-maps-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #d87330;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  margin-top: 4px;
+}
+
+.restaurant-maps-link:hover {
+  text-decoration: underline;
+}
+
+.restaurant-empty {
+  padding: 45px 20px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px dashed #e8d6c5;
+  border-radius: 17px;
+}
+
+.restaurant-empty > svg {
+  color: #e98238;
+}
+
+.restaurant-empty h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  margin-bottom: 7px;
+}
+
+.restaurant-empty p {
+  font-size: 13px;
+  color: #928172;
+}
+
+.google-maps-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px;
+  margin-top: 28px;
+  background: #fff0df;
+  border: 1px solid #f0ddc9;
+  border-radius: 17px;
+}
+
+.google-maps-banner h3 {
+  margin: 0 0 6px;
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  color: #422d1f;
+}
+
+.google-maps-banner p {
+  margin: 0;
+  font-size: 12px;
+  color: #927c68;
+  line-height: 1.6;
+}
+
+.google-maps-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 17px;
+  border-radius: 10px;
+  background: #e98238;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.google-maps-btn:hover {
+  background: #ce6828;
+}
+
+.restaurant-data-note {
+  text-align: center;
+  font-size: 11px;
+  color: #a39485;
+  margin-top: 28px;
+  line-height: 1.6;
+}
+
+.restaurant-spin {
+  animation: restaurantRotate 1s linear infinite;
+}
+
+@keyframes restaurantRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive design */
+
+@media (max-width: 760px) {
+  .restaurants-header {
+    padding: 12px 15px;
+    gap: 10px;
+  }
+
+  .restaurant-brand h2 {
+    font-size: 18px;
+  }
+
+  .restaurant-brand-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .restaurant-header-label {
+    font-size: 11px;
+  }
+
+  .restaurants-main {
+    padding: 30px 15px;
+  }
+
+  .restaurants-intro h1 {
+    font-size: 31px;
+  }
+
+  .restaurant-map {
+    height: 320px;
+  }
+
+  .restaurant-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .restaurant-back-btn {
+    padding: 8px;
+    font-size: 11px;
+  }
+
+  .restaurant-brand {
+    gap: 6px;
+  }
+
+  .restaurant-header-label {
+    display: none;
+  }
+
+  .restaurants-intro h1 {
+    font-size: 27px;
+  }
+
+  .restaurant-section-heading h2 {
+    font-size: 21px;
+  }
+
+  .restaurant-card {
+    padding: 15px;
+    flex-wrap: wrap;
+  }
+
+  .google-maps-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .google-maps-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ==============================
+   FOODIEBOT - RECIPE PAGE
+============================== */
+
+.recipes-page {
+    min-height: 100vh;
+    background: #fffaf4;
+    padding-bottom: 60px;
+    color: #39251c;
+}
+
+.recipes-hero {
+    text-align: center;
+    padding: 65px 20px 45px;
+}
+
+.recipes-eyebrow {
+    color: #ed762c;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.recipes-hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(32px, 5vw, 48px);
+    margin: 20px 0 12px;
+}
+
+.recipes-hero > p {
+    color: #806f65;
+    margin-bottom: 28px;
+}
+
+.recipe-search {
+    display: flex;
+    align-items: center;
+    max-width: 700px;
+    margin: 0 auto;
+    gap: 10px;
+    background: white;
+    border: 1px solid #f0dfd1;
+    border-radius: 12px;
+    padding: 9px;
+}
+
+.recipe-search select,
+.recipe-search input {
+    border: none;
+    outline: none;
+    padding: 12px;
+    background: transparent;
+    color: #39251c;
+}
+
+.recipe-search input {
+    flex: 1;
+    min-width: 0;
+}
+
+.recipe-search button,
+.recipe-card-content button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #ed812f;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    padding: 13px 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.recipe-search button:hover,
+.recipe-card-content button:hover {
+    background: #d96820;
+}
+
+.recipe-search button:disabled,
+.recipe-card-content button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.random-recipe-btn {
+    margin-top: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #ed812f;
+    background: transparent;
+    color: #dc702b;
+    border-radius: 9px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.random-recipe-btn:hover {
+    background: #fff0e3;
+}
+
+.recipe-results {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 25px;
+}
+
+.recipe-section-heading {
+    margin-bottom: 25px;
+}
+
+.recipe-section-heading h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: Georgia, serif;
+    font-size: 27px;
+}
+
+.recipe-section-heading p {
+    color: #88776c;
+    margin-top: 7px;
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 24px;
+}
+
+.recipe-card {
+    overflow: hidden;
+    background: white;
+    border: 1px solid #f0e5dc;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(70, 40, 20, 0.06);
+    transition: transform 0.2s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-4px);
+}
+
+.recipe-card > img {
+    width: 100%;
+    height: 185px;
+    object-fit: cover;
+}
+
+.recipe-card-content {
+    padding: 17px;
+}
+
+.recipe-card-content h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.recipe-card-content p {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #88776c;
+    margin-bottom: 16px;
+}
+
+.recipe-card-content button {
+    width: 100%;
+}
+
+.recipe-status,
+.recipe-error {
+    text-align: center;
+    margin: 15px auto;
+    padding: 12px;
+}
+
+.recipe-error {
+    color: #bd382b;
+}
+
+.recipe-details {
+    max-width: 900px;
+    margin: 20px auto 50px;
+    padding: 25px;
+    background: white;
+    border: 1px solid #f0e5dc;
+    border-radius: 16px;
+}
+
+.recipe-back-btn {
+    border: none;
+    background: transparent;
+    color: #dc702b;
+    cursor: pointer;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.recipe-details > img {
+    display: block;
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.recipe-details h2 {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    margin: 20px 0 8px;
+}
+
+.recipe-details h3 {
+    margin: 25px 0 12px;
+}
+
+.recipe-details ul {
+    padding-left: 22px;
+    line-height: 1.9;
+}
+
+.recipe-instructions {
+    white-space: pre-line;
+    line-height: 1.8;
+    color: #69574c;
+}
+
+.recipe-details a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #dc702b;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .recipes-hero {
+        padding: 45px 15px 30px;
+    }
+
+    .recipe-search {
+        flex-wrap: wrap;
+    }
+
+    .recipe-search select {
+        width: 100%;
+    }
+
+    .recipe-search input {
+        flex: 1 1 100%;
+    }
+
+    .recipe-search button {
+        width: 100%;
+    }
+
+    .recipe-results {
+        padding: 10px 15px;
+    }
+
+    .recipe-details {
+        margin: 15px;
+        padding: 16px;
+    }
+}
+
+/* ================================
+   FOODIETALK CHAT PAGE
+================================ */
+
+.foodie-chat-page {
+  min-height: 100vh;
+  padding: 35px 6%;
+  background: #fff8ef;
+  color: #382a25;
+  box-sizing: border-box;
+}
+
+.chat-heading {
+  margin-bottom: 28px;
+}
+
+.chat-heading span {
+  color: #d87932;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.chat-heading h1 {
+  font-size: 34px;
+  margin: 8px 0;
+  color: #39251f;
+}
+
+.chat-heading p {
+  color: #806d62;
+  font-size: 15px;
+  margin: 0;
+}
+
+.chat-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 22px;
+  max-width: 1200px;
+  height: 620px;
+  margin: auto;
+}
+
+/* FRIEND SIDEBAR */
+
+.chat-friends {
+  background: #ffffff;
+  border: 1px solid #f0dfd0;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(75, 45, 25, 0.06);
+  overflow-y: auto;
+}
+
+.chat-friends h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 19px;
+  margin: 0 0 20px;
+  color: #432b22;
+}
+
+.chat-friend-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+  padding: 13px;
+  margin-bottom: 9px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: #fff9f3;
+  cursor: pointer;
+  text-align: left;
+  transition: 0.2s ease;
+}
+
+.chat-friend-item:hover,
+.chat-friend-item.selected {
+  background: #fff0df;
+  border-color: #e99a5c;
+}
+
+.chat-avatar {
+  width: 43px;
+  height: 43px;
+  min-width: 43px;
+  border-radius: 50%;
+  background: #e98238;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.chat-friend-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.chat-friend-info strong {
+  font-size: 14px;
+  color: #39251f;
+}
+
+.chat-friend-info small {
+  color: #927d70;
+  font-size: 12px;
+}
+
+/* CHAT WINDOW */
+
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: #ffffff;
+  border: 1px solid #f0dfd0;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(75, 45, 25, 0.06);
+  position: relative;
+}
+
+.chat-topbar {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 17px 22px;
+  background: #fffaf5;
+  border-bottom: 1px solid #f2e5d9;
+}
+
+.chat-topbar strong,
+.chat-topbar span {
+  display: block;
+}
+
+.chat-topbar strong {
+  font-size: 16px;
+  color: #39251f;
+}
+
+.chat-topbar span {
+  font-size: 12px;
+  color: #8d796e;
+  margin-top: 4px;
+}
+
+/* MESSAGES */
+
+.chat-messages {
+  flex: 1;
+  min-height: 0;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+  background: #fffdfb;
+}
+
+.chat-message {
+  max-width: 72%;
+  padding: 12px 16px;
+  border-radius: 15px;
+  overflow-wrap: anywhere;
+}
+
+.chat-message p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.chat-message span {
+  display: block;
+  font-size: 10px;
+  margin-top: 6px;
+  text-align: right;
+  opacity: 0.75;
+}
+
+.chat-message.sent {
+  align-self: flex-end;
+  background: #e98238;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-message.received {
+  align-self: flex-start;
+  background: #f5eee7;
+  color: #39251f;
+  border-bottom-left-radius: 4px;
+}
+
+/* EMPTY CHAT */
+
+.chat-empty,
+.chat-welcome {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 25px;
+  color: #9a7058;
+}
+
+.chat-empty h2,
+.chat-welcome h3 {
+  color: #432b22;
+  margin: 14px 0 7px;
+}
+
+.chat-empty p,
+.chat-welcome p {
+  color: #89776c;
+  line-height: 1.6;
+  max-width: 390px;
+  font-size: 14px;
+}
+
+/* MESSAGE INPUT */
+
+.chat-input-area {
+  display: flex;
+  gap: 10px;
+  padding: 17px;
+  border-top: 1px solid #f2e5d9;
+  background: #ffffff;
+}
+
+.chat-input-area input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid #ead9cb;
+  border-radius: 25px;
+  padding: 13px 18px;
+  font-size: 14px;
+  outline: none;
+  background: #fffaf5;
+}
+
+.chat-input-area input:focus {
+  border-color: #e98238;
+  box-shadow: 0 0 0 3px rgba(233, 130, 56, 0.12);
+}
+
+.chat-input-area button {
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 50%;
+  background: #e98238;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.chat-input-area button:hover {
+  background: #cf6926;
+  transform: scale(1.04);
+}
+
+.chat-input-area button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.chat-error {
+  color: #d43d32;
+  font-size: 13px;
+  padding: 0 18px 12px;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 768px) {
+  .foodie-chat-page {
+    padding: 22px 14px;
+  }
+
+  .chat-heading h1 {
+    font-size: 27px;
+  }
+
+  .chat-layout {
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: 14px;
+  }
+
+  .chat-friends {
+    max-height: 190px;
+  }
+
+  .chat-window {
+    height: 520px;
+  }
+
+  .chat-message {
+    max-width: 85%;
+  }
+
+  .chat-messages {
+    padding: 16px;
+  }
+}
+
