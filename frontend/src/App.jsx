@@ -16,7 +16,7 @@ import FriendManagement from "./pages/FriendManagement";
 import Chatbot from "./pages/Chatbot";
 
 
-import ProtectedRoute from "./routes/ProtectedRoute";
+import ProtectedRoute from "./Routes/ProtectedRoute";
 
 function App() {
   return (
