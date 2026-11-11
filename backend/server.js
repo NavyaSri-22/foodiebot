@@ -11,7 +11,8 @@ const allowedOrigins = [
     "http://localhost:5173",
     "http://localhost:5174",
     "http://localhost:5175",
-    "https://foodiebot-75an8wxd-navyagannavarapu9-3787s-projects.vercel.app"
+    "https://foodiebot-75an8wxd-navyagannavarapu9-3787s-projects.vercel.app",
+    "https://foodiebot-sooty.vercel.app"
 ];
 
 app.use(cors({
