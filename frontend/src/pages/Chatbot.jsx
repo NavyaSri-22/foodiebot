@@ -49,7 +49,7 @@ function Chatbot() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/food-chat",
+        "https://foodiebot-c61x.onrender.com/api/food-chat",
         {
           method: "POST",
           headers: {

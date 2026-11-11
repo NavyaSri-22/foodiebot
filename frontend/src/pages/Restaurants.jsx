@@ -68,7 +68,7 @@ function Restaurants() {
 
         try {
           const response = await fetch(
-            `http://localhost:5000/api/restaurants?lat=${lat}&lon=${lon}`
+            `https://foodiebot-c61x.onrender.com/api/restaurants?lat=`
           );
 
           const data = await response.json();
