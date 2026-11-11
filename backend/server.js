@@ -6,27 +6,35 @@ require("dotenv").config();
 
 const app = express();
 
-// Middleware
-const corsOptions = {
-  origin: [
+// CORS CONFIGURATION
+const allowedOrigins = [
     "http://localhost:5173",
     "http://localhost:5174",
-    "http://localhost:5175"
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"]
-};
+    "http://localhost:5175",
+    "https://foodiebot-75an8wxd-navyagannavarapu9-3787s-projects.vercel.app"
+];
 
-app.use(cors(corsOptions));
+app.use(cors({
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            console.log("Blocked CORS origin:", origin);
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
 
 app.use(express.json());
 
-// Home route
+// HOME ROUTE
 app.get("/", (req, res) => {
     res.send("Welcome to FoodieBot API!");
 });
 
-// Health check route
+// HEALTH CHECK
 app.get("/api/health", (req, res) => {
     res.status(200).json({
         success: true,
@@ -34,12 +42,11 @@ app.get("/api/health", (req, res) => {
     });
 });
 
-// AI Foodie Assistant
+// AI FOOD CHATBOT
 app.post("/api/food-chat", async (req, res) => {
     try {
         const { message } = req.body || {};
 
-        // Validate input
         if (typeof message !== "string" || !message.trim()) {
             return res.status(400).json({
                 success: false,
@@ -54,7 +61,6 @@ app.post("/api/food-chat", async (req, res) => {
             });
         }
 
-        // Check API key
         if (!process.env.GEMINI_API_KEY) {
             return res.status(500).json({
                 success: false,
@@ -62,12 +68,10 @@ app.post("/api/food-chat", async (req, res) => {
             });
         }
 
-        // Initialize Gemini
         const ai = new GoogleGenAI({
             apiKey: process.env.GEMINI_API_KEY
         });
 
-        // Generate food-related response
         const response = await ai.models.generateContent({
             model: "gemini-3.5-flash-lite",
             contents: message.trim(),
@@ -75,7 +79,7 @@ app.post("/api/food-chat", async (req, res) => {
                 systemInstruction: `
 You are FoodieBot, a friendly AI food assistant.
 
-Your role is to help users with:
+Help users with:
 - Food and cooking questions
 - Recipes and ingredients
 - Different cuisines and dishes
@@ -86,15 +90,13 @@ Your role is to help users with:
 
 IMPORTANT RULES:
 1. Answer only questions related to food and cooking.
-2. If a question is unrelated to food, politely explain that you are FoodieBot and can only help with food-related topics.
-3. Keep answers friendly, clear and beginner-friendly.
+2. Politely redirect unrelated questions.
+3. Keep answers friendly and beginner-friendly.
 4. Give practical steps when explaining recipes.
 5. Never invent restaurant availability, prices or opening hours.
 6. Do not give medical diagnoses or personalized medical dietary advice.
 7. Use simple language and organize longer answers clearly.
-`
-                ,
-                
+`,
                 maxOutputTokens: 700
             }
         });
@@ -114,8 +116,7 @@ IMPORTANT RULES:
     }
 });
 
-
-
+// RESTAURANT DISCOVERY
 app.get("/api/restaurants", async (req, res) => {
     try {
         const lat = Number(req.query.lat);
@@ -152,18 +153,13 @@ app.get("/api/restaurants", async (req, res) => {
 
         const response = await fetch(
             `https://api.geoapify.com/v2/places?${params}`,
-            {
-                signal: AbortSignal.timeout(20000)
-            }
+            { signal: AbortSignal.timeout(20000) }
         );
 
         if (!response.ok) {
             const errorText = await response.text();
             console.error("Geoapify error:", response.status, errorText);
-
-            throw new Error(
-                `Geoapify returned HTTP ${response.status}`
-            );
+            throw new Error(`Geoapify returned HTTP ${response.status}`);
         }
 
         const data = await response.json();
@@ -182,7 +178,11 @@ app.get("/api/restaurants", async (req, res) => {
                 }
 
                 return {
-                    id: String(properties.place_id || properties.datasource?.raw?.id || properties.name),
+                    id: String(
+                        properties.place_id ||
+                        properties.datasource?.raw?.id ||
+                        properties.name
+                    ),
                     name: properties.name,
                     type: properties.categories?.includes("catering.cafe")
                         ? "cafe"
@@ -216,11 +216,9 @@ app.get("/api/restaurants", async (req, res) => {
     }
 });
 
-
-
-// Server configuration
+// START SERVER
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-    console.log(`FoodieBot server running at http://localhost:${PORT}`);
+    console.log(`FoodieBot server running on port ${PORT}`);
 });
